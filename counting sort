@@ -1,0 +1,10 @@
+class Solution:
+    def countSort(self, arr):
+        # Create a count array and calculate frequency
+        count = [0] * 26
+        for char in arr:
+            count[ord(char) - ord('a')] += 1
+        
+        # Construct the sorted string directly
+        return ''.join(chr(i + ord('a')) * count[i] for i in range(26))
+
